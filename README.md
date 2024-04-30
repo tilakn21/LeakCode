@@ -1,6 +1,6 @@
-# Manga Maestro 📘🎨
+# Manga Mania 📘🎨
 
-Welcome to Manga Maestro, a manga hosting website that leverages image recognition AI APIs to automatically detect relevant tags for uploaded manga. This README provides an overview of the project, how to set it up, and key functionalities.
+Welcome to Manga Mania, a manga hosting website that leverages image recognition AI APIs to automatically detect relevant tags for uploaded manga. This README provides an overview of the project, how to set it up, and key functionalities.
 
 ## Project Overview 🚀
 
