@@ -4,7 +4,7 @@ Welcome to Manga Mania, a manga hosting website that leverages image recognition
 
 ## Project Overview 🚀
 
-Manga Maestro is designed to provide a seamless manga reading experience while leveraging AI-based image recognition for content tagging and NSFW content detection. Key functionalities include user authentication, automatic tagging, NSFW content flagging, reading view, and a dynamic landing page.
+Manga Mania is designed to provide a seamless manga reading experience while leveraging AI-based image recognition for content tagging and NSFW content detection. Key functionalities include user authentication, automatic tagging, NSFW content flagging, reading view, and a dynamic landing page.
 
 ## Features ✨
 
