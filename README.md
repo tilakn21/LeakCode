@@ -34,8 +34,9 @@ Manga Maestro is designed to provide a seamless manga reading experience while l
    ```bash
    git clone https://github.com/YourOrganization/MangaMaestro.git
 
-![Screenshot 1](https://drive.google.com/file/d/1jdVgZ8QPvLzwC9MTL113M3Hp2pB18h_t/view?usp=sharing)
-![Screenshot 2]((https://drive.google.com/file/d/14Urlt6vd6KZ2hGdCUuX9mJ7Cig2ln7Xt/view?usp=sharing))
-![Screenshot 1](https://drive.google.com/file/d/1Dy2jU7R0jHHmKJjic0LRHZUUcQqYsAcQ/view?usp=sharing)
-![Screenshot 2](https://drive.google.com/file/d/1bXupWXhFSHVL1uQr_cXgEsk1KOyigQum/view?usp=sharing)
+<img src="https://drive.google.com/uc?id=1jdVgZ8QPvLzwC9MTL113M3Hp2pB18h_t" alt="Screenshot 1" width="400" />
+<img src="https://drive.google.com/uc?id=14Urlt6vd6KZ2hGdCUuX9mJ7Cig2ln7Xt" alt="Screenshot 2" width="400" />
+<img src="https://drive.google.com/uc?id=1Dy2jU7R0jHHmKJjic0LRHZUUcQqYsAcQ" alt="Screenshot 3" width="400" />
+<img src="https://drive.google.com/uc?id=1bXupWXhFSHVL1uQr_cXgEsk1KOyigQum" alt="Screenshot 4" width="400" />
+
 
