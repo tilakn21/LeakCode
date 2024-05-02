@@ -1,0 +1,26 @@
+from PIL import Image
+import os
+from transformers import AutoModelForImageClassification, ViTImageProcessor
+import torch
+
+folder = "/content/test mangas"
+
+# Initialize the model and processor
+model = AutoModelForImageClassification.from_pretrained("Falconsai/nsfw_image_detection")
+processor = ViTImageProcessor.from_pretrained('Falconsai/nsfw_image_detection')
+
+for root, dirs, files in os.walk(folder):
+    for file_name in files:
+        file_path = os.path.join(root, file_name)
+        
+        img = Image.open(file_path)
+
+        # Using the model directly
+        with torch.no_grad():
+            inputs = processor(images=img, return_tensors="pt")
+            outputs = model(**inputs)
+            logits = outputs.logits
+
+        predicted_label = logits.argmax(-1).item()
+        label = model.config.id2label[predicted_label]
+        print(f"File: {file_path} - Predicted label: {label}")
