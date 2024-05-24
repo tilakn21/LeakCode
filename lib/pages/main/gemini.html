@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gemini Chatbot</title>
+  <script src="https://unpkg.com/@google/generative-ai/dist/index.umd.js"></script>
+</head>
+<body>
+  <h1>Gemini Chatbot</h1>
+  <div id="chat-container">
+    <div id="chat-messages"></div>
+    <input type="text" id="chat-input" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    const MODEL_NAME = "gemini-1.5-pro-latest";
+    const API_KEY = "AIzaSyCpZHavwVWQ-6kMToEmI4XQDNt_q5JEW5Q";
+
+    const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = window.GoogleGenerativeAI;
+
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+
+    const generationConfig = {
+      temperature: 1,
+      topK: 0,
+      topP: 0.95,
+      maxOutputTokens: 8192,
+    };
+
+    const safetySettings = [
+      {
+        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+      },
+      {
+        category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+      },
+      {
+        category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+      },
+      {
+        category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+      },
+    ];
+
+    let chat = model.startChat({
+      generationConfig,
+      safetySettings,
+      history: [],
+    });
+
+    function sendMessage() {
+      const inputField = document.getElementById("chat-input");
+      const message = inputField.value.trim();
+      if (message) {
+        addMessageToChat("User: " + message);
+        inputField.value = "";
+
+        chat.sendMessage(message).then((result) => {
+          const response = result.response;
+          addMessageToChat("Bot: " + response.text());
+        });
+      }
+    }
+
+    function addMessageToChat(message) {
+      const chatMessages = document.getElementById("chat-messages");
+      const messageElement = document.createElement("div");
+      messageElement.textContent = message;
+      chatMessages.appendChild(messageElement);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  </script>
+</body>
+</html>
